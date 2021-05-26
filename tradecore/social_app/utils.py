@@ -65,7 +65,7 @@ def abstract_api_get_ipgeolocation(user):
     currency_name = parsed["currency"]["currency_name"]
     currency_code = parsed["currency"]["currency_code"]
 
-    Location(
+    Location.objects.create(
         user=user,
         ip_address=ip_address,
         city=city,
@@ -118,7 +118,7 @@ def abstract_api_get_ipgeolocation(user):
             date = holiday["date"]
             week_day = holiday["week_day"]
 
-            Holiday(
+            Holiday.objects.create(
                 user=user,
                 country=country,
                 name=name,
